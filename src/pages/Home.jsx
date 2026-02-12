@@ -14,10 +14,11 @@ export default function Home({
     fetchProductsError
 }) {
 
+    const token = localStorage.getItem("accessToken");
+
     useEffect(() => {
         const checkLoggedInUser = async () => {
             try {
-                const token = localStorage.getItem("accessToken");
                 if (token) {
                     const response = await checkLogin()
                     getLoggedIn(true)
@@ -35,7 +36,7 @@ export default function Home({
             }
         };
         checkLoggedInUser()
-    }, [getLoggedIn, getUsername])
+    }, [getLoggedIn, getUsername, token])
 
     if (isLoadingProducts) return <div className="flex items-center justify-center"><LoadingIndicator /></div>
     if (fetchProductsError) return <p className="flex items-center justify-center text-2xl text-red-500">Error: {fetchProductsError}</p>;
