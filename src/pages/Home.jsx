@@ -44,7 +44,7 @@ export default function Home({
     return (
         <>
             {
-                isLoggedIn ? (
+                isLoggedIn && token ? (
                     <>
                         <h1 className="text-3xl font-extrabold p-2">Hi, {username}. Thanks for log in!</h1>
                     </>
@@ -66,7 +66,7 @@ export default function Home({
                                     <div className="m-2">
                                         <Link to={`/product/${product.id}`}>
                                             <img
-                                                class="w-full h-48 object-fit"
+                                                class="w-full object-cover"
                                                 onClick={() => { productClicked(product) }}
                                                 src={`https://eshopapi.dsc-ideas.cloud${product.image}`}
                                                 alt={product.name}
