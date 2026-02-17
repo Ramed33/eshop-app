@@ -65,7 +65,7 @@ function Cart({
                 (
                     <div className="flex items-center justify-center">
                         <Link to="/order">
-                            <button className="bg-gray-900 hover:bg-gray-700 text-white font-bold py-2 px-4 m-4 rounded w-auto md:w-full lg:w-1/2" onClick={() => createBuyOrder()}>
+                            <button className="bg-gray-900 hover:bg-gray-700 text-white font-bold py-2 px-4 m-4 rounded w-auto md:w-full lg:w-full" onClick={() => createBuyOrder()}>
                                 Buy cart
                             </button>
                         </Link>
